@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="form-container">
+        <div class="chat-box">
+            <header class="chat-header">
+                <div class="header-content">
+                    <div class="agent-info">
+                        <div class="agent-avatar">
+                            <img src="{{ url_for('static', filename='images/dostbot-avatar.png') }}" alt="DOSTBOT Avatar">
+                            <div class="online-indicator"></div>
+                        </div>
+                        <div class="agent-details">
+                            <h2>DOSTBOT</h2>
+                            <span class="status">Online</span>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('logout') }}" class="btn btn-secondary logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </header>
+            
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome message -->
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>👋 नमस्ते! आज मैं आपकी मदद करने में कैसे सक्षम हूं?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <form id="chat-form">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="message-input" 
+                            class="form-control" 
+                            placeholder="Type your message..." 
+                            autocomplete="off"
+                        >
+                        <div class="chat-buttons">
+                            <button 
+                                type="button" 
+                                id="voice-input-btn" 
+                                class="btn btn-secondary voice-btn" 
+                                title="Voice input"
+                            >
+                                <img src="{{ url_for('static', filename='images/mic.png') }}" alt="Microphone">
+                            </button>
+                            <button 
+                                type="submit" 
+                                class="btn btn-primary send-btn" 
+                                title="Send message"
+                            >
+                                <img src="{{ url_for('static', filename='images/send.png') }}" alt="Send">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

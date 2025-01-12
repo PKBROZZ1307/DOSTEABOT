@@ -1,0 +1,7 @@
+Flask==2.3.3
+python-dotenv==1.0.0
+SpeechRecognition==3.10.0
+pyaudio==0.2.13
+Flask-Login==0.6.2
+nltk==3.8.1
+faker==19.3.1

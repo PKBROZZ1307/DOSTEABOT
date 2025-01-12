@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="center-wrapper">
+        <div class="auth-box">
+            <h2 class="auth-title">Login</h2>
+            {% if error %}
+            <div class="error-message">
+                <i class="fas fa-exclamation-circle"></i>
+                {{ error }}
+            </div>
+            {% endif %}
+            <form method="POST" action="{{ url_for('login') }}" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email" 
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                </div>
+                <button type="submit" class="auth-button">Sign In</button>
+            </form>
+            <p class="auth-link">Don't have an account? <a href="{{ url_for('signup') }}">Create Account</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
